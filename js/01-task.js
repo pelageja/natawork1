@@ -1,3 +1,4 @@
+21.06
 // Запитати в користувача його ім'я, прізвище та вік за допомогою prompt
 // Записати всі відповіді на змінні і вивести в консоль:
 // User's full name is [name] [lastName]. He is [age] years old.
@@ -196,3 +197,328 @@
 // } else {
 //   console.log(`Зараз ${hours} години, ${restMinutes} хвилин(а).`);
 // }
+0707
+//task
+
+
+// Інпут (input, focus, blur)
+
+// Зробіть так, щоб
+//  - при фокусі на інпут його кордон ставав жовтим (клас .active)
+//  - при введенні в інпут введений текст потрапляв до абзацу під інпутом
+//  - при втраті фокусу перевіряємо текст в інпуті, і якщо він порожній, фарбуємо кордон у червоний колір (клас .error),
+//  а якщо ні - просто забираємо жовту рамку.
+{/* <input
+  placeholder="Enter something"
+  name="message"
+  type="text"
+  autocomplete="off"
+/>
+      <p>Your message: "<b class="text"></b>"</p>
+
+      input:not([type='checkbox']) {
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    padding: 8px;
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+
+.active {
+    border: 2px solid rgb(192, 192, 0);
+}
+
+.error {
+    border: 2px solid red;
+} */}
+//answer
+// const input = document.querySelector("input");
+// const outputText = document.querySelector("b");
+// input.addEventListener("focus", changeColor);
+// input.addEventListener("keydown", addText);
+// input.addEventListener("blur", examinationFn);
+// function changeColor() {
+//   input.classList.add("active");
+// }
+// function addText() {
+//   outputText.textContent = input.value;
+// }
+// function examinationFn() {
+//   if (input.value === "") {
+//     input.classList.remove("active");
+//     input.classList.add("error");
+//   } else if (input.value !== "") {
+//     input.classList.remove("error");
+//     input.classList.add("active");
+//   }
+// }
+
+
+//task
+// Popup
+
+// Даний простий прихований popup з класом popup.
+// При натисканні на кнопку показати popup (клас popup_open).
+// При натисканні ESC приховати.
+// Слухач ESC не повинен постійно висіти на window, а кнопка та слухач кліка повинні не діяти при відкритій модалці.
+// Перевірити це в тілі функції-обробника.
+
+
+{/* <div class="popup">
+  <h3>Hello from popup! ❤</h3>
+</div>
+<button class="open-popup-btn">Open</button> */}
+// button {
+//     margin: 0 14px;
+//     padding: 7px 10px;
+//     border-radius: 5px;
+//     background-color: #008cba;
+//     border: none;
+//     color: white;
+//     cursor: pointer;
+//     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+//     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+//     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+//     0 2px 12px 0 rgba(0, 0, 0, 0.24), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+//     transition: all 0.15s ease-in-out;
+// }
+
+// button:disabled {
+//     opacity: 0.6;
+//     cursor: not-allowed;
+//     box-shadow: none;
+// }
+
+// button:hover:not(:disabled) {
+//     background-color: #007caa;
+//     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+//     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+//     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+//     0 1px 6px 0 rgba(0, 0, 0, 0.24), 0 4px 12px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// button:active:not(:disabled) {
+//     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+//     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+//     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+// }
+
+
+// .popup {
+//     padding: 2px;
+//     margin-bottom: 40px;
+//     border-radius: 5px;
+//     background-color: blanchedalmond;
+//     text-align: center;
+//     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+//     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+//     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+//     0 20px 36px 0 rgba(0, 0, 0, 0.24), 0 20px 36px 0 rgba(0, 0, 0, 0.19);
+//     transition: all 0.1s 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+//     opacity: 0;
+//     z-index: 1;
+//     transform: scale(0.8);
+// }
+
+// .popup_open {
+//     opacity: 1;
+//     transform: scale(1);
+// }
+
+// .open-popup-btn {
+//     padding: 12px 24px;
+//     font-size: 1em;
+// }
+
+//answer
+// const popup = document.querySelector(".popup");
+// const btnPopup = document.querySelector(".open-popup-btn");
+// btnPopup.addEventListener("click", showMassege);
+// function showMassege() {
+//   popup.classList.add("popup_open");
+//   btnPopup.setAttribute("disabled", "disabled");
+//   window.addEventListener("keydown", onEscPressKey);
+// }
+// function onEscPressKey(event) {
+//   if (event.code === "Escape") {
+//     popup.classList.remove("popup_open");
+//     window.removeEventListener("keydown", onEscPressKey);
+//     btnPopup.removeAttribute("disabled");
+//   }
+// }
+
+
+0807
+
+//task
+
+// Є сині прямокутники.
+// 1) При натисканні на прямокутник він повинен змінювати колір з синього на жовтий, з жовтого на синій (клас block_active).
+// 2) При натисканні на прямокутник, він стає жовтим.
+//    При цьому якщо є вже жовтий квадрат, то він стає синім.
+//    Так можна кликати на будь-який квадрат, він стає жовтим, а старий жовтий квадрат назад синім і тд.
+// 3) Внизу таблиці є кнопка "змінити кольори".
+//    При її натисканні всі кольори клітин змінюються на протилежні.
+{/* <nav class="container">
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+    <div class="shadow js-block"></div>
+</nav>
+  <button class="reverse">Change colors</button> */}
+
+//   .container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+// }
+
+// .container div {
+//     width: 40px;
+//     height: 40px;
+//     background-color: #06c;
+//     margin: 6px 0;
+//     flex-basis: 23%;
+//     border-radius: 5px;
+//     transition: transform 0.2s;
+// }
+
+// .container div:hover {
+//     transform: scale(1.04);
+// }
+
+// .container.block_active,
+// .container div.block_active,
+// .container .reverse.block_active {
+//     background-color: #fc0;
+// }
+
+// button.reverse {
+//     display: block;
+//     width: 100%;
+//     background-color: rgb(210, 210, 210);
+//     border: 1px solid #ccc;
+//     color: #000;
+//     margin-top: 20px;
+// }
+
+// button.reverse:hover {
+//     background-color: rgb(200, 200, 200);
+// }
+
+//answer
+
+// const btnEl = document.querySelector('.reverse');
+// const containerEl = document.querySelector('nav');
+// const blockEl = document.querySelectorAll('.js-block');
+// containerEl.addEventListener('click', onBlockClick);
+// containerEl.addEventListener('click', onBlockChange);
+// btnEl.addEventListener('click', onBtnClick);
+// 1)
+// function onBlockClick(event) {
+//   if (event.target.tagName !== 'DIV') {
+//     return;
+//   }
+//   event.target.classList.toggle('block_active');
+// }
+// 2)
+// function onBlockChange(event) {
+//   if (event.target.tagName !== 'DIV') {
+//         return;
+//       }
+//       console.log('~', event.target);
+//       console.log('-', event.currentTarget);
+//       const target = event.target;
+//       const container = event.currentTarget;
+//       const activeBlock = container.querySelector('.block_active');
+//       if (activeBlock) {
+//         activeBlock.classList.remove('block_active');
+//       }
+//       target.classList.add('block_active');
+// }
+// 3)
+// function onBtnClick(event) {
+//   const active = [...blockEl].filter(el => el.classList.contains('block_active'));
+//   console.log(active);
+//   const unActive = [...blockEl].filter(el => !el.classList.contains('block_active'));
+//   console.log(unActive);
+//   active.forEach(el => el.classList.remove('block_active'));
+//   unActive.forEach(el => el.classList.add('block_active'));
+// }
+
+//task
+
+// TODO list 
+
+// Існує форма з одним інпутом, куди вводиться текст. І є чекбокс.
+//    Поки чекбокс не натиснутий, кнопка на формі неактивна.
+//    Натисканням Enter в інпуті або натисканням на кнопку Add, в список нижче, додається todo-нотатка.
+//    Очистити інпут
+//    Прибрати перезавантаження, звертатися через форму (elements) та ім'я інпуту
+//    При натисканні на todo-замітку у списку, вона стає виконаною, тобто. текст закреслюється (клас complete)
+//    Чекбокс при додаванні нотатки знову має стати не вибраним, а кнопка знову недоступною
+//    Додати кнопку Видалити на кожну нотатку (+функціонал видалення)
+//    <form>
+//     <input name="myTodo" type="text" autocomplete="off" />
+//     <button disabled type="submit">Add</button>
+//     <label>Confirm <input type="checkbox" name="confirm" /></label>
+// </form>
+
+// <h4>TO-DO list:</h4>
+// <ol class="todo-list"></ol>
+
+// form {
+//     display: flex;
+// }
+
+// input[type='checkbox'] {
+//     margin: 0 10px;
+// }
+
+// .todo-list li {
+//     margin: 10px;
+//     font-size: 20px;
+//     cursor: pointer;
+// }
+
+// .complete {
+//     text-decoration: line-through;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
